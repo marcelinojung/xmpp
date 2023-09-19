@@ -3,6 +3,24 @@
                data = <<>> :: binary()}).
 -type text() :: #text{}.
 
+-xml(prism,
+    #elem{name = <<"query">>,
+      xmlns = <<"ns:prism">>,
+      module = 'prism',
+      ignore_els = true,
+      result = {prism, '$prismrep', '$_els'},
+      cdata = #cdata{default = <<"">>, label = '$prismrep'}}).
+    }
+).
+-xml(prism_data,
+    #elem{name = <<"query">>,
+      xmlns = <<"ns:prism:data">>,
+      module = 'prism',
+      ignore_els = true,
+      result = {prism_data, '$_els'}
+    }
+).
+
 -xml(jidprep,
      #elem{name = <<"jid">>,
 	   xmlns = <<"urn:xmpp:jidprep:0">>,
