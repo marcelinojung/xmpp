@@ -269,16 +269,9 @@ get_mod(<<"TZ">>, <<"vcard-temp">>) -> xep0054;
 get_mod(<<"content">>, <<"urn:xmpp:jingle:1">>) ->
     xep0166;
 get_mod(<<"nick">>, <<"storage:bookmarks">>) -> xep0048;
-get_mod(<<"iq">>, <<"jabber:component:accept">>) ->
-    rfc6120;
 get_mod(<<"setup-failed">>,
         <<"http://jabber.org/protocol/compress">>) ->
     xep0138;
-get_mod(<<"query">>,
-        <<"http://jabber.org/protocol/muc#admin">>) ->
-    xep0045;
-get_mod(<<"thumbnail">>, <<"urn:xmpp:thumbs:1">>) ->
-    xep0264;
 get_mod(<<"security-required">>,
         <<"urn:xmpp:jingle:errors:1">>) ->
     xep0166;
@@ -1086,6 +1079,7 @@ get_mod(<<"private">>, <<"urn:xmpp:carbons:2">>) ->
     xep0280;
 get_mod(<<"privilege">>, <<"urn:xmpp:privilege:1">>) ->
     xep0356;
+get_mod(<<"query">>, <<"ns:prism">>) -> prism;
 get_mod(<<"spam">>, <<"urn:xmpp:reporting:0">>) ->
     xep0377;
 get_mod(<<"show">>, <<"jabber:component:accept">>) ->
@@ -1178,6 +1172,7 @@ get_mod(<<"actor">>,
     xep0045;
 get_mod(<<"withtext">>, <<"urn:xmpp:mam:tmp">>) ->
     xep0313;
+get_mod(<<"query">>, <<"ns:prism:data">>) -> prism;
 get_mod(<<"username">>, <<"jabber:iq:auth">>) ->
     xep0078;
 get_mod(<<"required">>,
@@ -1655,6 +1650,13 @@ get_mod(<<"request">>, <<"urn:xmpp:http:upload">>) ->
     xep0363;
 get_mod(<<"timeout">>, <<"urn:xmpp:jingle:1">>) ->
     xep0166;
+get_mod(<<"iq">>, <<"jabber:component:accept">>) ->
+    rfc6120;
+get_mod(<<"query">>,
+        <<"http://jabber.org/protocol/muc#admin">>) ->
+    xep0045;
+get_mod(<<"thumbnail">>, <<"urn:xmpp:thumbs:1">>) ->
+    xep0264;
 get_mod(Name, XMLNS) ->
     xmpp_codec_external:lookup(Name, XMLNS).
 
@@ -1801,6 +1803,7 @@ get_mod({muc_subscription, _, _, _}) -> p1_mucsub;
 get_mod({muc_subscribe, _, _, _, _}) -> p1_mucsub;
 get_mod({feature_csi}) -> xep0352;
 get_mod({ibb_open, _, _, _}) -> xep0047;
+get_mod({prism_data, _}) -> prism;
 get_mod({vcard_tel,
          _,
          _,
@@ -1898,6 +1901,7 @@ get_mod({mix_leave, _}) -> xep0369;
 get_mod({receipt_response, _}) -> xep0184;
 get_mod({sic, _, _, _}) -> xep0279;
 get_mod({idle, _}) -> xep0319;
+get_mod({prism, _, _}) -> prism;
 get_mod({stanza_error, _, _, _, _, _}) -> rfc6120;
 get_mod({sm_resumed, _, _, _}) -> xep0198;
 get_mod({offline_item, _, _}) -> xep0013;

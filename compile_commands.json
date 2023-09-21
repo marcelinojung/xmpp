@@ -1,0 +1,14 @@
+[
+{ "file"      : "c_src/xmpp_uri.c"
+, "directory" : "/prism/test/xmpp"
+, "command"   : "cc -c -DHAS_ERTS_EXIT -g -O2 -Wall -g -Wall -fPIC -MMD -I\"/usr/lib/erlang/lib/erl_interface-5.1/include\" -I\"/usr/lib/erlang/erts-12.2.1/include\" c_src/xmpp_uri.c -o c_src/xmpp_uri.o"
+}
+{ "file"      : "c_src/jid.c"
+, "directory" : "/prism/test/xmpp"
+, "command"   : "cc -c -DHAS_ERTS_EXIT -g -O2 -Wall -g -Wall -fPIC -MMD -I\"/usr/lib/erlang/lib/erl_interface-5.1/include\" -I\"/usr/lib/erlang/erts-12.2.1/include\" c_src/jid.c -o c_src/jid.o"
+}
+{ "file"      : "c_src/xmpp_lang.c"
+, "directory" : "/prism/test/xmpp"
+, "command"   : "cc -c -DHAS_ERTS_EXIT -g -O2 -Wall -g -Wall -fPIC -MMD -I\"/usr/lib/erlang/lib/erl_interface-5.1/include\" -I\"/usr/lib/erlang/erts-12.2.1/include\" c_src/xmpp_lang.c -o c_src/xmpp_lang.o"
+}
+]
