@@ -16,6 +16,7 @@
 %%%
 %%%-------------------------------------------------------------------
 
+-define(NS_PRISM, <<"ns:prism">>).
 -define(NS_COMPONENT, <<"jabber:component:accept">>).
 -define(NS_SERVER, <<"jabber:server">>).
 -define(NS_SERVER_DIALBACK, <<"jabber:server:dialback">>).
